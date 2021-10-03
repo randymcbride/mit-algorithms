@@ -1,0 +1,16 @@
+ONE DIMENSIONAL PEAK
+======================
+[1,2,0,6,7,2] => peaks are in positions 1 and 4
+[4,3,2,1] peak is position 0
+
+TWO DIMENSIONAL PEAK
+====================
+[
+    [ 4, 3, 2, 1 ],
+    [ 8, 2, 6, 4 ],
+    [ 8, 1, 5, 3 ]
+] => peaks are [1,0], [1,2], and [2, 0]
+
+PROBLEM
+========
+Find a peak (only need to find one, even if more exist)
