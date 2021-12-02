@@ -1,0 +1,71 @@
+I. Why Sorting?
+    a. Phone book
+    b. Some problems become trivial once the array is sorted
+        1. e.g. median, looking for specific item in array (binary search)
+    c. data compression (allows you to assign frequencies to duplicates and maintain one copy of the duplicate)
+
+II. Insertion sort
+    a.  Definition:
+            For i = 1, 2 ... n
+            Insert A[i] into sorted array into correct position
+            by pairwise swaps down to the correct position
+
+    b. Example:
+        5 | 2 | 4 | 6 | 1 | 3  ===> 2 < 5 -therefore swap ===> 2 | 5 | 4 | 6 | 1 | 3 ===> 2 is in the initial spot ===> i + 1
+            ^
+            i
+
+        2 | 5 | 4 | 6 | 1 | 3 ====> 4 < 5 therefore swap ===> 2 | 4 | 5 | 6 | 1 | 3 ===> 4 > 2 ===> i + 1
+                ^
+                i
+
+        2 | 4 | 5 | 6 | 1 | 3 => 6 > 5 === > i + 1
+                    ^
+                    i
+
+        2 | 4 | 5 | 6 | 1 | 3 ===> 1 < 6 therefore swap ===>   2 | 4 | 5 | 1 | 6 | 3 ===> 1 < 5 therefore swap, etc.
+                        ^
+                        i
+
+        1 | 2 | 4 | 5 | 6 | 3 ===> 3 < 6 therefore swap ===>   1 | 2 | 4 | 5 | 3 | 6 ===> 3 < 5 therefore swap, etc.
+                            ^
+                            i
+
+    c. Analysis: This is O(n^2)
+
+III. Merge sort
+
+    a. Definition:
+            Recursive function: take 2 sorted arrays, combine them with 2 finger approach
+
+    b. Example:
+        .
+        1 | 5 | 7
+        --------- => 1 |
+        2 | 3 | 8
+        .
+
+            .
+        1 | 5 | 7
+        --------- => 1 | 2
+        2 | 3 | 8
+        .
+
+            .
+        1 | 5 | 7
+        --------- => 1 | 2 | 3
+        2 | 3 | 8
+            .
+
+            .
+        1 | 5 | 7
+        --------- => 1 | 2 | 3 | 5
+        2 | 3 | 8
+                .
+
+                .
+        1 | 5 | 7
+        --------- => 1 | 2 | 3 | 5 | 7 | 8
+        2 | 3 | 8
+                .
+    c. Analysis: This is O(log n)
